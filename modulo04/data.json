@@ -1,0 +1,31 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "http://localhost:3000/instructors/create",
+      "name": "gideon",
+      "birth": 1609977600000,
+      "gender": "M",
+      "services": "Motorista",
+      "created_at": 1608930354051
+    },
+    {
+      "id": 2,
+      "avatar_url": "http://localhost:3000/instructors/create",
+      "name": "Isabela",
+      "birth": 1609372800000,
+      "gender": "F",
+      "services": "fedorentinha",
+      "created_at": 1608930406818
+    },
+    {
+      "id": 3,
+      "avatar_url": "http://localhost:3000/instructors/create",
+      "name": "Tatiana",
+      "birth": 1609372800000,
+      "gender": "F",
+      "services": "Dona de casa",
+      "created_at": 1608930436300
+    }   
+  ]
+}
