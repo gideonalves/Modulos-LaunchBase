@@ -2,30 +2,30 @@
   "instructors": [
     {
       "id": 1,
-      "avatar_url": "http://localhost:3000/instructors/create",
-      "name": "gideon",
-      "birth": 1609977600000,
+      "avatar_url": "https://scontent.fcgh32-1.fna.fbcdn.net/v/t1.0-1/p160x160/28468073_1652267591533341_6568265407122848285_n.jpg?_nc_cat=111&ccb=2&_nc_sid=dbb9e7&_nc_ohc=-fP25n5qeFgAX9ifBwT&_nc_ht=scontent.fcgh32-1.fna&tp=6&oh=e8ae5d94f94b6167821e64ca060ec79e&oe=600FFD17",
+      "name": "Gideon ",
+      "birth": 348883200000,
       "gender": "M",
-      "services": "Motorista",
+      "services": "Motorista, Programador, Desginer Grafico, ",
       "created_at": 1608930354051
     },
     {
       "id": 2,
-      "avatar_url": "http://localhost:3000/instructors/create",
-      "name": "Isabela",
-      "birth": 1609372800000,
-      "gender": "F",
-      "services": "fedorentinha",
-      "created_at": 1608930406818
+      "avatar_url": "https://avatars0.githubusercontent.com/u/43097497?s=64&v=4",
+      "name": "Alexandro",
+      "birth": 1286668800000,
+      "gender": "M",
+      "services": "html, javascript",
+      "created_at": 1611017802121
     },
     {
       "id": 3,
-      "avatar_url": "http://localhost:3000/instructors/create",
-      "name": "Tatiana",
-      "birth": 1609372800000,
-      "gender": "F",
-      "services": "Dona de casa",
-      "created_at": 1608930436300
-    }   
+      "avatar_url": "https://avatars0.githubusercontent.com/u/54292958?s=64&v=4",
+      "name": "daiwison",
+      "birth": 1612569600000,
+      "gender": "M",
+      "services": "ddd",
+      "created_at": 1611017876094
+    }
   ]
 }

@@ -2,7 +2,8 @@
                                                                             //
 const express = require('express')                                          //
 const nunjucks = require('nunjucks') //chama o nunjucks                     //
-const routes = require("./routes") // 03 chama o nunjucks                   //
+const routes = require("./routes") // 03 chama o nunjucks                   //         
+const methodOverride = require('method-override')                           //
                                                                             //
 const server = express()                                                    //
                                                                              //
@@ -11,6 +12,7 @@ const server = express()                                                    //
 /* todos os arquvos use ou os miduer */
 server.use(express.urlencoded ({ extended:true })) /* essa linha e responsavel por req.body */
 server.use(express.static('public'))
+server.use(methodOverride('_method'))
 server.use(routes) // 04
 
 
