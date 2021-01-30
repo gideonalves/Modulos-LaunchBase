@@ -1,5 +1,17 @@
 {
-  "members": [],
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "http://localhost:3000/members/create",
+      "name": "mayck",
+      "email": "mayck@yahoo.com.br",
+      "birth": 1612396800000,
+      "gender": "M",
+      "blood": "B-",
+      "weight": "182",
+      "height": "172"
+    }
+  ],
   "instructors": [
     {
       "id": 1,

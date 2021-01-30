@@ -148,7 +148,7 @@ header {
 
 /* FORM */
 
-input {
+input, select {
     width: 100%;
     outline: none; /* tira a linha do input */
     color: #777;
