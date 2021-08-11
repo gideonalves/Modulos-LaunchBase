@@ -56,8 +56,7 @@ module.exports = { // aqui vai exporta tudo para a pagina controler/instructor.j
             if(err) throw `Database Erro! ${err}`
 
             callback(results.rows[0])
-        })
-       
+        })       
     },
 
     findBy(filter, callback) {
@@ -87,7 +86,6 @@ module.exports = { // aqui vai exporta tudo para a pagina controler/instructor.j
             services=($5)
         WHERE id = $6
         `
-
         const values = [
             data.avatar_url,
             data.name,
@@ -127,8 +125,6 @@ module.exports = { // aqui vai exporta tudo para a pagina controler/instructor.j
             WHERE instructors.name ILIKE '%${filter}%' 
             OR instructors.services ILIKE '%${filter}%'
             `
-
-
             totalQuery = `(
                 SELECT count(*) FROM instructors
                 ${filterQuery}
@@ -136,7 +132,6 @@ module.exports = { // aqui vai exporta tudo para a pagina controler/instructor.j
         }
 
         query = 
-        //Seleciona todos instructors e conta os membros e total_students
         `        
         SELECT instructors.*, ${totalQuery}, count(members) AS total_students
         FROM instructors
@@ -144,12 +139,10 @@ module.exports = { // aqui vai exporta tudo para a pagina controler/instructor.j
         ${filterQuery}
         GROUP BY instructors.id LIMIT $1 OFFSET $2
         `
-
         db.query(query, [limit, offset], function(err, results) {
             if(err) throw `Database Erro! ${err}`
 
             callback(results.rows)
-
         })        
     }
 }
