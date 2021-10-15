@@ -9,8 +9,25 @@ const usuarios = [
   { nome: "Tuane", tecnologias:   ["HTML", "Node.js"] }
 ];
 
-//Percorra a lista de usuários com uma estrutura de repetição imprimindo em tela as informações dos usuários:
 
+const userFilter =[]
+for ( usuario of usuarios){
+  for (tecnologia of usuario.tecnologias ) {
+    if(tecnologia == 'CSS'){
+      console.log(`${usuario.nome} trabalha com ${usuario.tecnologias.join(", ")}`)
+    }
+  }
+}
+
+// console.log(userFilter);
+
+// for ( usuario of usuarios){
+//   console.log(`${usuario} trabalha com ${usuario.tecnologias.join(", ")}`)
+// }
+
+// console.log(usuarios);
+
+//Percorra a lista de usuários com uma estrutura de repetição imprimindo em tela as informações dos usuários:
 
 //Carlos trabalha com HTML, CSS
 //Jarmine trabalha com JavaScript, CSS
@@ -20,7 +37,3 @@ const usuarios = [
 // length para saber quantos elementos eu tenho no meu array
 // [].length
 
-
-for ( usuario of usuarios){
-        console.log(`${usuario.nome} trabalha com ${usuario.tecnologias.join(", ")}`)
-}

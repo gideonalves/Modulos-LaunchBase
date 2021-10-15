@@ -6,3 +6,6 @@ console.log(numeros)
 
 }
 matematica (somar)
+
+
+
