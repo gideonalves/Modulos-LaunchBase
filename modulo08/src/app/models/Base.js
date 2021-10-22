@@ -65,7 +65,7 @@ const Base = {
         }
     },
 
-    update(id, fields) {
+    async update(id, fields) {
         try {
             let update = []
             
@@ -80,8 +80,8 @@ const Base = {
             let query = `UPDATE ${this.table} SET
             ${update.join(',')} WHERE id = ${id}`
 
-            return db.query(query)
-          
+            await db.query(query)
+            return          
 
         } catch (error) {
             console.error(error)

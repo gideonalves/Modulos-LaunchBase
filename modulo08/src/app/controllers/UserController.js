@@ -3,6 +3,7 @@ const { hash } = require('bcryptjs')
 
 const User = require('../models/User')
 const Product = require('../models/Product')
+const LoadProductsService = require('../services/LoadProductSevice')
 
 const { formatCep, formatCpfCnpj } = require('../../lib/utils')
 
@@ -102,8 +103,8 @@ module.exports = {
             req.session.destroy()
 
             //remover as imagens da pasta public
-            promiseResults.map(results => {
-                results.rows.map(file => {
+            promiseResults.map(files => {
+                files.map(file => {
                     try {
                         unlinkSync(file.path)
                     } catch (error) {
@@ -123,5 +124,15 @@ module.exports = {
                 error: "Erro ao tentar deletar sua conta!"
             })
         }   
+    },
+
+    async ads(req, res) {
+        const products = await LoadProductsService.load('products', {
+            where: { user_id: req.session.userId }
+        })
+
+        return res.render("user/ads", { products })
     }
+
+
 }    
