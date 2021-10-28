@@ -3,8 +3,7 @@ const { unlinkSync } = require('fs')
 const Category = require('../models/Category')
 const Product = require('../models/Product')
 const File = require('../models/File')
-const LoadProductService = require('../services/LoadProductSevice')
-
+const LoadProductService = require('../services/LoadProductService')
 
 module.exports = {
 
@@ -21,7 +20,6 @@ module.exports = {
   async post(req, res) {
     try {
      
-
       let { category_id, name, description, old_price, price, quantity, status } = req.body
 
       price = price.replace(/\D/g, "")
@@ -38,11 +36,11 @@ module.exports = {
       })
 
       // Cria as imagens
-      const filePromise = req.files.map(file =>
-        File.create({ name: file.filename, path: file.path, product_id }));
-      await Promise.all(filePromise)
+      const filesPromise = req.files.map(file =>
+        File.create({ name: file.filename, path: file.path.replace(/\\/g, "/" ), product_id }))
+      await Promise.all(filesPromise)
 
-      return res.redirect(`products/${product_id}/edit`)
+      return res.redirect(`/products/${product_id}/edit`)
 
     } catch (error) {
       console.error(error);

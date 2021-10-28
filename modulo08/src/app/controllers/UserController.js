@@ -3,7 +3,7 @@ const { hash } = require('bcryptjs')
 
 const User = require('../models/User')
 const Product = require('../models/Product')
-const LoadProductsService = require('../services/LoadProductSevice')
+const LoadProductsService = require('../services/LoadProductService')
 
 const { formatCep, formatCpfCnpj } = require('../../lib/utils')
 
@@ -31,13 +31,14 @@ module.exports = {
 
     async post(req, res) {
         try {
-
+            
             let {  name, email, password, cpf_cnpj, cep, address } = req.body
-
-            passwordHash = await hash(password, 8)
+            
+            password = await hash(password, 8)
+            
             cpf_cnpj = cpf_cnpj.replace(/\D/g, "")
             cep = cep.replace(/\D/g, "")
-
+            
             const userId = await User.create({
                 name, 
                 email, 

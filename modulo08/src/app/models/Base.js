@@ -40,6 +40,11 @@ const Base = {
         return results.rows
     },
 
+    async findOneWithDeleted(filter) {
+        const results = await find(filters, `${this.table}_whith_deleted`)
+        return results.rows[0]
+    },
+
     async create(fields) { // fields é os campos do formulario = User.create({name: 'Mayk'})
         try {
             let keys = [],
